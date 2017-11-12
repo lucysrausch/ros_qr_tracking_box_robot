@@ -22,7 +22,7 @@ def callback(data):
             rospy.loginfo("Marker %d detected!", i.id)
             speed = (i.pose.pose.position.z - SET_DISTANCE) * P_DISTANCE
             rotation = i.pose.pose.position.x * P_ROTATION
-            pub.publish(Twist(linear = Vector3(speed, 0, 0), angular = Vector3(0, 0, rotation))
+            pub.publish(Twist(linear = Vector3(speed, 0, 0), angular = Vector3(0, 0, rotation)))
     if not valid:
         pub.publish(Twist())
         valid = False

@@ -128,14 +128,14 @@ include_directories(
 # add_dependencies(two_wheel_odom ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(two_wheel_odom_node src/odometry_node.cpp src/odometry.cpp)
+add_executable(odometry_node src/odometry_node.cpp src/odometry.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(two_wheel_odom_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(odometry_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(two_wheel_odom_node
+target_link_libraries(odometry_node
   ${catkin_LIBRARIES}
 )
 

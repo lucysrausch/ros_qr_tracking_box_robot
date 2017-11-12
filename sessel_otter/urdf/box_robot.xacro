@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot name="beteigeuze">
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<box size="0.65 0.4 0.02"/>
+			</geometry>
+			<origin xyz="-0.235 0.0 0.13" />
+		</visual>
+	</link>
+
+	<link name="wheel_left">
+		<visual>
+			<geometry>
+				<cylinder length="0.06" radius="0.09"/>
+			</geometry>
+			<origin xyz="0.0 0.0 0.0" />
+		</visual>
+	</link>
+	<joint name="base_link_to_wheel_left" type="fixed">
+		<parent link="base_link" />
+		<child link="wheel_left" />
+        <origin xyz="0.0 0.2325 0.06" rpy="${pi/2} 0 0" />
+	</joint>
+
+	<link name="wheel_right">
+		<visual>
+			<geometry>
+				<cylinder length="0.06" radius="0.09"/>
+			</geometry>
+			<origin xyz="0.0 0.0 0.0" />
+		</visual>
+	</link>
+	<joint name="base_link_to_wheel_right" type="fixed">
+		<parent link="base_link" />
+		<child link="wheel_right" />
+		<origin xyz="0.0 -0.2325 0.06" rpy="${pi/2} 0 0" />
+	</joint>
+
+	<link name="ar_cam">
+		<visual>
+			<geometry>
+				<box size="0.05 0.05 0.05"/>
+			</geometry>
+			<origin xyz="0 0 0.0" />
+		</visual>
+	</link>
+	<joint name="base_link_to_ar_cam" type="fixed">
+		<parent link="base_link" />
+		<child link="ar_cam" />
+		<origin xyz="0.0 0.0 0.2" rpy="0 0 0" />
+	</joint>
+
+</robot>

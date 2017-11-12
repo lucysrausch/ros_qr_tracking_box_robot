@@ -75,8 +75,8 @@ def main():
         tx_speed = sum(vel_tp)/len(vel_tp)
         tx_dir = sum(dir_tp)/len(dir_tp)
 
-        rospy.loginfo("Speed: %f", tx_speed)
-        rospy.loginfo("Steering: %f", tx_dir)
+        #rospy.loginfo("Speed: %f", tx_speed)
+        #rospy.loginfo("Steering: %f", tx_dir)
 
         motorR = tx_speed + tx_dir
         motorL= tx_speed - tx_dir

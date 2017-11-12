@@ -6,10 +6,10 @@ from geometry_msgs.msg import Twist, Vector3
 
 pub = None
 
-P_ROTATION   = 1
-P_DISTANCE   = 1
+P_ROTATION   = 0.03
+P_DISTANCE   = 0.03
 
-SET_DISTANCE = 0.4 # distance in m
+SET_DISTANCE = 1 # distance in m
 
 TAG_ID       = 5
 

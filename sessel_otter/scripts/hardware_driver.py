@@ -39,7 +39,7 @@ def main():
     r = rospy.Rate(100) # Hz
     vel_tp = [0] * 50 # 50 sample low-pass for speed
     dir_tp = [0] * 10 # 10 sample low-pass for steering
-    
+
     while not rospy.is_shutdown():
         vel_tp[len(vel_tp)-1] = speed if not timeout > TIMEOUT else 0
         vel_tp[:-1] = vel_tp[1:]
@@ -54,7 +54,7 @@ def main():
         rospy.loginfo("Steering: %f", tx_dir)
 
         motorR = tx_speed + tx_dir
-        motorL = tx_speed - tx_dir
+        motorL= tx_speed - tx_dir
 
         binR = struct.pack('f', motorR)
         binL = struct.pack('f', motorL)
@@ -64,6 +64,9 @@ def main():
                 ser.write(b)
             for b in binL:
                 ser.write(b)
+
+        #response = ser.readline()
+        #print(response)
 
         timeout+=1
         r.sleep()

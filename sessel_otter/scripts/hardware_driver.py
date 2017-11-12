@@ -17,8 +17,8 @@ def clamp(n, minn, maxn):
 
 def callback(data):
     global speed, direction, timeout
-    speed = clamp(data.linear.z, -MAX_SPEED, MAX_SPEED)
-    direction = clamp(data.linear.x, -MAX_STEERING, MAX_STEERING)
+    speed = clamp(data.linear.x, -MAX_SPEED, MAX_SPEED)
+    direction = clamp(data.angular.z, -MAX_STEERING, MAX_STEERING)
     timeout = 0
     #rospy.loginfo("Speed: %f", speed)
 

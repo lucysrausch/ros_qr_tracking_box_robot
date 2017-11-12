@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="beteigeuze">
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<box size="0.7 0.38 0.4"/>
+			</geometry>
+			<origin xyz="0 0 0.2" />
+		</visual>
+	</link>
+
+
+	<link name="ar_cam">
+		<visual>
+			<geometry>
+				<box size="0.1 0.1 0.15"/>
+				<origin xyz="0 0 0.045" />
+			</geometry>
+		</visual>
+	</link>
+	<joint name="base_link_to_ar_cam" type="fixed">
+		<parent link="base_link" />
+		<child link="ar_cam" />
+		<origin xyz="0.25 0.0 0.1" rpy="0 0 0" />
+	</joint>
+
+</robot>

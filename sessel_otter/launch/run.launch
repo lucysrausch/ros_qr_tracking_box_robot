@@ -18,5 +18,11 @@
   <arg name="output_frame" default="/ar_cam" />
 
   <node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame)" />
-  <node pkg="tf" type="static_transform_publisher" name="kinect_base_link5" args="0 0 0 0 0 0 /base /ar_cam 100"/>
+
+  <include file="$(find sessel_otter)/launch/publish_urdf.launch" />
+
+  <node name="two_wheel_odom" pkg="two_wheel_odom" type="odometry_node" output="screen">
+    <param name="wheelbase" value="0.465" />
+    <param name="ticks_per_meter" value="1000" />
+  </node>
 </launch>
